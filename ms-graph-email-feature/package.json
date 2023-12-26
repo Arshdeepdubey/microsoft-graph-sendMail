@@ -1,0 +1,24 @@
+{
+  "name": "ms-graph-email-feature",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "debug:auth": "node debug/debug-auth.js",
+    "debug:token": "node debug/inspect-token.js",
+    "debug:email": "node debug/test-run.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@azure/identity": "^4.13.1",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}
