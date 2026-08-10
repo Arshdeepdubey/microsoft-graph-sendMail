@@ -2,9 +2,9 @@ name: Node.js CI - Unit Tests
 
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: ["main", "master"]
   pull_request:
-    branches: [ "main", "master" ]
+    branches: ["main", "master"]
 
 jobs:
   test:
@@ -23,11 +23,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+          cache-dependency-path: ms-graph-email-feature/package-lock.json
 
       - name: Install dependencies
+        working-directory: ms-graph-email-feature
         run: npm ci
 
       - name: Run Jest tests
+        working-directory: ms-graph-email-feature
         env:
           TENANT_ID: test-tenant
           CLIENT_ID: test-client
